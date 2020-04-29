@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Liste d'articles</h1>
+    {#Les doubles accolades comptent comme un écho alors que le accolade %
+    est comme un <?php#}
+    <table class="table table-stripped">
+        <tr>
+            <th>Libelle</th>
+
+        </tr>
+    {% for art in liste_articles %}
+    {#Comme un foreach#}
+       <tr>
+           <td>
+               <a href="{{ path('description',{'id' : art.prix}) }}">{{ art.libelle }}</a>
+           </td>
+       </tr>
+
+    {% endfor %}
+    </table>
+{% endblock %}
